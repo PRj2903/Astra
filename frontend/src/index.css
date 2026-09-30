@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #faf8f5;
+  --color-cream-100: #f5efeb;
+  --color-cream-200: #eee5db;
+  --color-cream-300: #e3d5c4;
+  --color-cream-400: #cfbc9e;
+  --color-cream-500: #b99e7b;
+
+  --color-gold-50: #fdfbf7;
+  --color-gold-100: #f7eed9;
+  --color-gold-200: #eedcaf;
+  --color-gold-300: #dfc27e;
+  --color-gold-400: #d4ab4d;
+  --color-gold-500: #c59733;
+  --color-gold-600: #aa7a26;
+  --color-gold-700: #885c21;
+  --color-gold-800: #6f4920;
+  --color-gold-900: #4a3014;
+
+  --color-royal-950: #1a1614;
+  --color-royal-900: #26211d;
+  --color-royal-850: #332d28;
+  --color-royal-800: #453e38;
+  --color-royal-700: #5c534b;
+  --color-royal-600: #786d63;
+
+  --color-emerald-950: #022c22;
+  --color-emerald-900: #064e3b;
+  --color-emerald-700: #047857;
+  --color-emerald-500: #10b981;
+
+  --color-maroon-900: #540b0e;
+  --color-maroon-800: #781014;
+  --color-maroon-600: #9e2a2b;
+
+  --font-serif: "Cormorant Garamond", "Cinzel", serif;
+  --font-heading: "Cinzel", "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-price: "Outfit", "Plus Jakarta Sans", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #faf8f5;
+    color: #292524;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-price {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Scrollbar for Luxury Experience */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e3d5c4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c59733;
+}
+
+/* Metallic Gold Text Shimmer */
+.gold-shimmer {
+  background: linear-gradient(
+    110deg,
+    #885c21 0%,
+    #c59733 25%,
+    #dfc27e 50%,
+    #aa7a26 75%,
+    #6f4920 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Glassmorphism Luxury Cream Glow */
+.luxury-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 151, 51, 0.22);
+}
+
+.luxury-glass-card {
+  background: #ffffff;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(227, 213, 196, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(100, 75, 40, 0.08);
+}
+
+.luxury-glass-card:hover {
+  border-color: rgba(197, 151, 51, 0.45);
+  box-shadow: 0 18px 40px -10px rgba(197, 151, 51, 0.16);
+}
+
+/* Pulse badge animation */
+@keyframes hallmarkPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.hallmark-glow {
+  box-shadow: 0 0 15px rgba(212, 171, 77, 0.22);
+}
